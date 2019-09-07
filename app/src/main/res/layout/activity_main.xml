@@ -50,7 +50,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textSize="100sp"
+                android:textSize="80sp"
+                android:textStyle="bold"
                 android:textColor="@android:color/background_light"
                 android:text="@string/initial_score"/>
 
@@ -89,6 +90,15 @@
                 android:background="@android:color/background_light"
                 android:textColor="@android:color/holo_red_dark"
                 android:text="@string/went_for_two"/>
+
+            <Button
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:background="@android:color/background_light"
+                android:textColor="@android:color/holo_red_dark"
+                android:text="@string/touch_back"/>
 
         </LinearLayout>
 
@@ -118,7 +128,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textColor="@android:color/background_light"
-                android:textSize="100sp"
+                android:textStyle="bold"
+                android:textSize="80sp"
                 android:text="@string/initial_score"/>
 
             <Button
@@ -156,6 +167,15 @@
                 android:background="@android:color/background_light"
                 android:textColor="@color/team_blue"
                 android:text="@string/went_for_two"/>
+
+            <Button
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:background="@android:color/background_light"
+                android:textColor="@color/team_blue"
+                android:text="@string/touch_back"/>
 
         </LinearLayout>
 
