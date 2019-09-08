@@ -5,24 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/footballGreen"
+    android:background="@drawable/football_field"
     tools:context=".MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:padding="8dp"
-        android:layout_margin="8dp"
-        android:textSize="36sp"
-        android:textColor="@android:color/background_light"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:text="@string/title" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -35,7 +24,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:src="@drawable/red_helmet"/>
+                android:src="@drawable/red_helmet_v2"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -44,60 +33,67 @@
                 android:textSize="36sp"
                 android:textColor="@android:color/holo_red_dark"
                 android:textStyle="bold"
-                android:text="@string/team_1"/>
+                android:text="@string/team_red"/>
 
             <TextView
+                android:id="@+id/team_red_score_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textSize="80sp"
                 android:textStyle="bold"
-                android:textColor="@android:color/background_light"
+                android:textColor="@android:color/holo_red_dark"
                 android:text="@string/initial_score"/>
 
             <Button
+                android:id="@+id/team_red_field_goal_button"
+                android:onClick="fieldGoalRed"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@android:color/background_light"
-                android:textColor="@android:color/holo_red_dark"
+                android:background="@android:color/holo_red_dark"
+                android:textColor="@android:color/background_light"
                 android:layout_marginBottom="16dp"
                 android:text="@string/field_goal"/>
 
             <Button
+                android:id="@+id/team_red_touchdown_button"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="16dp"
-                android:background="@android:color/background_light"
-                android:textColor="@android:color/holo_red_dark"
+                android:background="@android:color/holo_red_dark"
+                android:textColor="@android:color/background_light"
                 android:text="@string/touchdown"/>
 
             <Button
+                android:id="@+id/team_red_extra_point_button"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="16dp"
-                android:background="@android:color/background_light"
-                android:textColor="@android:color/holo_red_dark"
+                android:background="@android:color/holo_red_dark"
+                android:textColor="@android:color/background_light"
                 android:text="@string/extra_point"/>
 
             <Button
+                android:id="@+id/team_red_went_for_two_button"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="16dp"
-                android:background="@android:color/background_light"
-                android:textColor="@android:color/holo_red_dark"
+                android:background="@android:color/holo_red_dark"
+                android:textColor="@android:color/background_light"
                 android:text="@string/went_for_two"/>
 
             <Button
+                android:id="@+id/team_red_touch_back_button"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="16dp"
-                android:background="@android:color/background_light"
-                android:textColor="@android:color/holo_red_dark"
+                android:background="@android:color/holo_red_dark"
+                android:textColor="@android:color/background_light"
                 android:text="@string/touch_back"/>
 
         </LinearLayout>
@@ -112,7 +108,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:src="@drawable/blue_helmet"/>
+                android:src="@drawable/blue_helmet_v2"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -121,60 +117,66 @@
                 android:textSize="36sp"
                 android:textColor="@color/team_blue"
                 android:textStyle="bold"
-                android:text="@string/team_2"/>
+                android:text="@string/team_blue"/>
 
             <TextView
+                android:id="@+id/team_blue_score_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textColor="@android:color/background_light"
+                android:textColor="@color/team_blue"
                 android:textStyle="bold"
                 android:textSize="80sp"
                 android:text="@string/initial_score"/>
 
             <Button
+                android:id="@+id/team_blue_field_goal_button"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="16dp"
-                android:background="@android:color/background_light"
-                android:textColor="@color/team_blue"
+                android:background="@color/team_blue"
+                android:textColor="@android:color/background_light"
                 android:text="@string/field_goal"/>
 
             <Button
+                android:id="@+id/team_blue_touchdown_button"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="16dp"
-                android:background="@android:color/background_light"
-                android:textColor="@color/team_blue"
+                android:background="@color/team_blue"
+                android:textColor="@android:color/background_light"
                 android:text="@string/touchdown"/>
 
             <Button
+                android:id="@+id/team_blue_extra_point_button"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="16dp"
-                android:background="@android:color/background_light"
-                android:textColor="@color/team_blue"
+                android:background="@color/team_blue"
+                android:textColor="@android:color/background_light"
                 android:text="@string/extra_point"/>
 
             <Button
+                android:id="@+id/team_blue_went_for_two_button"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="16dp"
-                android:background="@android:color/background_light"
-                android:textColor="@color/team_blue"
+                android:background="@color/team_blue"
+                android:textColor="@android:color/background_light"
                 android:text="@string/went_for_two"/>
 
             <Button
+                android:id="@+id/team_blue_touch_back_button"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="16dp"
-                android:background="@android:color/background_light"
-                android:textColor="@color/team_blue"
+                android:background="@color/team_blue"
+                android:textColor="@android:color/background_light"
                 android:text="@string/touch_back"/>
 
         </LinearLayout>
@@ -182,10 +184,11 @@
     </LinearLayout>
 
     <Button
-        android:layout_width="135dp"
+        android:id="@+id/reset_button"
+        android:layout_width="148dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@android:color/holo_red_dark"
+        android:background="@color/footballGreen"
         android:textColor="@android:color/background_light"
         android:text="@string/reset"/>
 

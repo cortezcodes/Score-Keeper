@@ -4,11 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    int teamOneScore = 0;
-    int teamTwoScore = 0;
+    int teamRedScore = 0;
+    int teamBlueScore = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,59 +17,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void fieldGoalOne(View view){
-        addPointsTeamOne(3);
+    public void fieldGoalRed(View view){
+        updateTeamRedScore(3);
     }
 
-    public void touchdownTeamOne(View view){
-
-    }
-
-    public void extraPointTeamOne(View view){
+    public void updateAll(){
 
     }
 
-    public void wentForTwoTeamOne(View view){
-
+    /**
+     * Takes in an int and updates teamRedScore, before passing the new score to displayTeamRedScore
+     * @param score - score to be added to original teamRedScore.
+     */
+    private void updateTeamRedScore(int score){
+        teamRedScore = teamRedScore + score;
+        displayTeamRedScore(teamRedScore);
     }
 
-    public void fieldGoalTeamTwo(View view){
-
-    }
-
-    public void touchdownTeamTwo(View view){
-
-    }
-
-    public void extraPointTeamtwo(View view){
-
-    }
-
-    public void wentForTwoTeamTwo(View view){
-
-    }
-
-    public void reset(View view){
-
-    }
-
-    private void addPointsTeamOne(int points){
-
-    }
-
-    private void addPointsTeanTwo(int points){
-
-    }
-
-    private void updateScorboardOne(String score){
-
-    }
-
-    private void updateScoreboardTwo(String score){
-
-    }
-
-    private void updateAll(){
-
+    private void displayTeamRedScore(int score){
+        TextView teamRedScoreboard = (TextView) findViewById(R.id.team_red_score_textview);
+        teamRedScoreboard.setText(score);
     }
 }
