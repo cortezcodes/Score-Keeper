@@ -58,6 +58,7 @@
 
             <Button
                 android:id="@+id/team_red_touchdown_button"
+                android:onClick="touchdownRed"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -68,6 +69,7 @@
 
             <Button
                 android:id="@+id/team_red_extra_point_button"
+                android:onClick="extraPointRed"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -78,6 +80,7 @@
 
             <Button
                 android:id="@+id/team_red_went_for_two_button"
+                android:onClick="wentForTwoRed"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -88,6 +91,7 @@
 
             <Button
                 android:id="@+id/team_red_touch_back_button"
+                android:onClick="touchBackRed"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -131,6 +135,7 @@
 
             <Button
                 android:id="@+id/team_blue_field_goal_button"
+                android:onClick="fieldGoalBlue"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -141,6 +146,7 @@
 
             <Button
                 android:id="@+id/team_blue_touchdown_button"
+                android:onClick="touchdownBlue"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -151,6 +157,7 @@
 
             <Button
                 android:id="@+id/team_blue_extra_point_button"
+                android:onClick="exraPointBlue"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -161,6 +168,7 @@
 
             <Button
                 android:id="@+id/team_blue_went_for_two_button"
+                android:onClick="wentForTwoBlue"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -171,6 +179,7 @@
 
             <Button
                 android:id="@+id/team_blue_touch_back_button"
+                android:onClick="touchBackBlue"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -185,6 +194,7 @@
 
     <Button
         android:id="@+id/reset_button"
+        android:onClick="updateAll"
         android:layout_width="148dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
