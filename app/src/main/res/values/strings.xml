@@ -10,4 +10,7 @@
     <string name="touch_back">Touch Back</string>
     <string name="team_red">Team Red</string>
     <string name="team_blue">Team Blue</string>
+    <string name="missed_extra">Missed Extra Point</string>
+    <string name="red_helmet_logo_description">Red Helmet logo</string>
+    <string name="blue_helmet_logo_description">Blue Helmet logo</string>
 </resources>
