@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Resets all variables, displays, and button logic.
      */
-    public void updateAll(View view){
+    public void updateAll(View view) {
         teamRedScore = 0;
         teamBlueScore = 0;
         updateTeamRedScore(0);
@@ -54,27 +54,30 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * onClick method for Team Red's field goal button. passes 3 points to the updateTeamRedScore
+     *
      * @param view
      */
-    public void fieldGoalRed(View view){
+    public void fieldGoalRed(View view) {
         scoreToast(0, "Red team");
         updateTeamRedScore(3);
     }
 
     /**
      * onClick method for Team Blue's field goal button. passes 3 points to the updateTeamBlueScore
+     *
      * @param view
      */
-    public void fieldGoalBlue(View view){
+    public void fieldGoalBlue(View view) {
         scoreToast(0, "Blue team");
         updateTeamBlueScore(3);
     }
 
     /**
      * onClick method for Team Red's touchdown button. passes 6 points to the updateTeamBlueScore
+     *
      * @param view
      */
-    public void touchdownRed(View view){
+    public void touchdownRed(View view) {
         scoreToast(1, "Red team");
         updateTeamRedScore(6);
         afterTouchdown(true);
@@ -82,9 +85,10 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * onClick method for Team Blue's touchdown button. passes 6 points to the updateTeamBlueScore
+     *
      * @param view
      */
-    public void touchdownBlue(View view){
+    public void touchdownBlue(View view) {
         scoreToast(1, "Blue team");
         updateTeamBlueScore(6);
         afterTouchdown(false);
@@ -92,9 +96,10 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * onClick method for Team Red's extra point button. passes 1 points to the updateTeamRedScore
+     *
      * @param view
      */
-    public void extraPointRed(View view){
+    public void extraPointRed(View view) {
         scoreToast(2, "Red team");
         updateTeamRedScore(1);
         beforeTouchdown();
@@ -102,9 +107,10 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * onClick method for Team Blue's extra point button. passes 1 points to the updateTeamBlueScore
+     *
      * @param view
      */
-    public void exraPointBlue(View view){
+    public void exraPointBlue(View view) {
         scoreToast(2, "Blue team");
         updateTeamBlueScore(1);
         beforeTouchdown();
@@ -112,9 +118,10 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * onClick method for Team Red's went for two button. passes 2 points to the updateTeamBlueScore
+     *
      * @param view
      */
-    public void wentForTwoRed(View view){
+    public void wentForTwoRed(View view) {
         scoreToast(3, "Red team");
         updateTeamRedScore(2);
         beforeTouchdown();
@@ -122,9 +129,10 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * onClick method for Team Blue's went for two button. passes 2 points to the updateTeamBlueScore
+     *
      * @param view
      */
-    public void wentForTwoBlue(View view){
+    public void wentForTwoBlue(View view) {
         scoreToast(3, "Blue team");
         updateTeamBlueScore(2);
         beforeTouchdown();
@@ -132,23 +140,25 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * onClick method for Team Red's touch back button. passes 2 points to the updateTeamBlueScore
+     *
      * @param view
      */
-    public void touchBackRed(View view){
+    public void touchBackRed(View view) {
         scoreToast(4, "Red team");
         updateTeamRedScore(2);
     }
 
     /**
      * onClick method for Team Blue's touch back button. passes 2 points to the updateTeamBlueScore
+     *
      * @param view
      */
-    public void touchBackBlue(View view){
+    public void touchBackBlue(View view) {
         scoreToast(4, "Blue team");
         updateTeamBlueScore(2);
     }
 
-    public void missedExtraPoint(View view){
+    public void missedExtraPoint(View view) {
         scoreToast(5, "");
         beforeTouchdown();
     }
@@ -156,12 +166,13 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Displays a toast based on the type of points scored and the team that scored them.
+     *
      * @param caseCall used to decide what statement to toast.
      * @param teamName used to identify the team in the toast.
      */
-    private void scoreToast(int caseCall, String teamName){
+    private void scoreToast(int caseCall, String teamName) {
         String announcement = "";
-        switch(caseCall){
+        switch (caseCall) {
             case 0:
                 announcement = teamName + " kicks one straight through the uprights!";
                 break;
@@ -186,19 +197,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     /**
      * Takes in an int, adds its value to the global variable teamRedScore, and sets the display of Team Red to the new global variable value.
+     *
      * @param points - int variable to be added to original teamRedScore value.
      */
-    private void updateTeamRedScore(int points){
+    private void updateTeamRedScore(int points) {
         String score;
         teamRedScore = teamRedScore + points;
         TextView teamRedScoreboard = findViewById(R.id.team_red_score_textview);
-        if (teamRedScore < 10){
+        if (teamRedScore < 10) {
             score = "0" + teamRedScore;
-        }
-        else {
+        } else {
             score = Integer.toString(teamRedScore);
         }
         teamRedScoreboard.setText(score);
@@ -206,16 +216,16 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Takes in an int, adds its value to the global variable teamBlueScore, and sets the display of Team Blue to the new global variable value
+     *
      * @param points - int variable to be added to original teamRedScore value.
      */
-    private void updateTeamBlueScore(int points){
+    private void updateTeamBlueScore(int points) {
         String score;
         teamBlueScore = teamBlueScore + points;
         TextView teamBlueScoreboard = findViewById(R.id.team_blue_score_textview);
-        if (teamBlueScore < 10){
+        if (teamBlueScore < 10) {
             score = "0" + teamBlueScore;
-        }
-        else {
+        } else {
             score = Integer.toString(teamBlueScore);
         }
         teamBlueScoreboard.setText(score);
@@ -225,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
      * Sets state of all buttons displayed before a touchdown is scored. Disables the extra point,
      * the went for two, and the missed extra point buttons. Also changes the buttons background to gray.
      */
-    private void beforeTouchdown(){
+    private void beforeTouchdown() {
         missedExtraBtn.setEnabled(false);
         redExtraPointBtn.setEnabled(false);
         redWentForTwoBtn.setEnabled(false);
@@ -243,9 +253,9 @@ public class MainActivity extends AppCompatActivity {
      * Button logic after a touchdown is scored. All buttons disabled except for the scoring teams
      * extra point, went for two, and missed extra buttons.
      */
-    private void afterTouchdown(boolean isRedTouchdown){
+    private void afterTouchdown(boolean isRedTouchdown) {
 
-        if (isRedTouchdown){
+        if (isRedTouchdown) {
             missedExtraBtn.setEnabled(true);
             redExtraPointBtn.setEnabled(true);
             redWentForTwoBtn.setEnabled(true);
@@ -257,8 +267,7 @@ public class MainActivity extends AppCompatActivity {
             bluExtraPointBtn.setEnabled(false);
             blueWentForTwoBtn.setEnabled(false);
             blueTouchBackBtn.setEnabled(false);
-        }
-        else{
+        } else {
             missedExtraBtn.setEnabled(true);
             redExtraPointBtn.setEnabled(false);
             redWentForTwoBtn.setEnabled(false);
